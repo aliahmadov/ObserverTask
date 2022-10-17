@@ -55,7 +55,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ISubscriber.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Youtuber.cs" />
+    <Compile Include="Models\YoutubeSubscriber.cs" />
+    <Compile Include="ViewModels\AddPostViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MessageBoxButton.cs" />
+    <Compile Include="ViewModels\SubscriberHomeViewModel.cs" />
+    <Compile Include="ViewModels\YoutuberMainViewModel.cs" />
+    <Compile Include="Views\AddPostUC.xaml.cs">
+      <DependentUpon>AddPostUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubscriberHomeUC.xaml.cs">
+      <DependentUpon>SubscriberHomeUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YoutuberMainViewUC.xaml.cs">
+      <DependentUpon>YoutuberMainViewUC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AddPostUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomeUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -78,6 +99,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SubscriberHomeUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\YoutuberMainViewUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -105,11 +134,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

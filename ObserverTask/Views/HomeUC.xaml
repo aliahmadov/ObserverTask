@@ -20,7 +20,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Margin="10" FontSize="40" Padding="10" Background="OrangeRed"  Foreground="White" FontWeight="Bold">
+            <Button Command="{Binding YoutuberCommand}" Margin="10" FontSize="40" Padding="10" Background="OrangeRed"  Foreground="White" FontWeight="Bold">
                 Youtuber
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -29,7 +29,7 @@
                 </Button.Resources>
             </Button>
 
-            <Button Margin="10" FontSize="40" Padding="10" Background="OrangeRed"  Foreground="White" FontWeight="Bold">
+            <Button Command="{Binding SubscriberCommand}" Margin="10" FontSize="40" Padding="10" Background="OrangeRed"  Foreground="White" FontWeight="Bold">
                 Subscriber
                 <Button.Resources>
                     <Style TargetType="Border">
