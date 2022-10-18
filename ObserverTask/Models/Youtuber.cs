@@ -12,5 +12,9 @@ namespace ObserverTask.Models
 
         public List<ISubscriber> Subscribers { get; set; }
 
+        public Youtuber()
+        {
+            Subscribers = new List<ISubscriber>();
+        }
     }
 }
