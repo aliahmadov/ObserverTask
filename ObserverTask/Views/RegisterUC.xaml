@@ -29,7 +29,9 @@
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center">
             <Label Margin="5,0,0,0" FontSize="20" Foreground="OrangeRed">Username</Label>
-            <TextBox Text="{Binding Subscriber.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10" FontSize="25" Width="250"></TextBox>
+            <StackPanel>
+                <TextBox Text="{Binding Subscriber.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10" FontSize="25" Width="250"></TextBox>
+            </StackPanel>
 
             <Label Margin="5,0,0,0" FontSize="20" Foreground="OrangeRed">Password</Label>
             <PasswordBox Name="password_box"  Margin="10" FontSize="25"></PasswordBox>

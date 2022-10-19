@@ -1,5 +1,7 @@
 ﻿using Microsoft.Win32;
 using ObserverTask.Commands;
+using ObserverTask.Helpers;
+using ObserverTask.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,17 +17,40 @@ namespace ObserverTask.ViewModels
 
         public RelayCommand BackCommand { get; set; }
 
-        private string selectedImagePath;
+        public RelayCommand ShareCommand { get; set; }
 
-        public string SelectedImagePath
+        private string confirmImage;
+
+        public string ConfirmImage
         {
-            get { return selectedImagePath; }
-            set { selectedImagePath = value; OnPropertyChanged(); }
+            get { return confirmImage; }
+            set { confirmImage = value; OnPropertyChanged(); }
         }
+
+
+        private string selectedImage;
+
+        public string SelectedImage
+        {
+            get { return selectedImage; }
+            set { selectedImage = value; OnPropertyChanged(); }
+        }
+
+
+        private Post post;
+
+        public Post Post
+        {
+            get { return post; }
+            set { post = value; OnPropertyChanged(); }
+        }
+
+
 
 
         public AddPostViewModel()
         {
+            ConfirmImage = $"/Images/cross.png";
             ChooseImageCommand = new RelayCommand(c =>
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -35,14 +60,26 @@ namespace ObserverTask.ViewModels
                     var file = openFileDialog.FileName;
                     if (file.EndsWith(".jpg") || file.EndsWith(".png"))
                     {
-                        SelectedImagePath = file;
+                        Post = new Post();
+                        Post.ImagePath = file;
+                        SelectedImage=file; 
                     }
                     else
                     {
-                        MessageBox.Show("Picture in wrong format - .jpg or .png", "Info",System.Windows.MessageBoxButton.OK,MessageBoxImage.Information);
+                        MessageBox.Show("Picture in wrong format - .jpg or .png", "Info", System.Windows.MessageBoxButton.OK, MessageBoxImage.Information);
                     }
 
                 }
+            });
+
+            ShareCommand = new RelayCommand(c =>
+            {
+                App.Youtuber.NotifyAllUsers(Post);
+                ConfirmImage = $"/Images/tick.png";
+                FileHelper.WriteSubscribers(App.Youtuber.Subscribers,"subscribers");
+                MessageBox.Show("Shared Successfully");
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(BackPage);
             });
 
             BackPage = App.MyGrid.Children[0];

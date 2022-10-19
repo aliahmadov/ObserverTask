@@ -32,7 +32,7 @@
                     <Rectangle.Fill >
                         <ImageBrush 
                                 x:Name="imageBrush"
-                            ImageSource="{Binding SelectedImagePath}"
+                            ImageSource="{Binding SelectedImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            
                            >
 
@@ -67,7 +67,7 @@
                 <Label HorizontalAlignment="Center" FontSize="20" Margin="10,23,10,10"
                    Foreground="#031927" FontWeight="Bold">Information Part</Label>
 
-                <TextBox FontSize="14" Height="200" Margin="10,0,10,10" TextWrapping="Wrap" ></TextBox>
+                <TextBox Text="{Binding Post.TextInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="14" Height="200" Margin="10,0,10,10" TextWrapping="Wrap" ></TextBox>
                 <Label HorizontalContentAlignment="Center" Foreground="Gray"
                    FontWeight="DemiBold">Share some text</Label>
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -78,7 +78,7 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
                     Orientation="Horizontal">
             <Button FontSize="25" Padding="80,10,80,10" Foreground="White"
-                    Background="#031927" FontWeight="Bold">
+                    Background="#031927" FontWeight="Bold" Command="{Binding ShareCommand}">
                 Share
                 <Button.Resources>
                     <Style TargetType="Border">
@@ -89,7 +89,7 @@
                 </Button.Resources>
             </Button>
 
-            <Image Margin="5" Width="40" Source="/Images/cross.png">
+            <Image Margin="5" Width="40" Source="{Binding ConfirmImage}">
                 
             </Image>
         </StackPanel>

@@ -32,6 +32,17 @@ namespace ObserverTask.ViewModels
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(BackPage);
             });
+
+            ShowSubscribersCommand = new RelayCommand(c =>
+            {
+                var showSubscribersUC = new ShowSubscribersUC();
+                var showSubscribersViewModel = new ShowSubscribersViewModel();
+                showSubscribersViewModel.Subscribers = App.Youtuber.Subscribers;
+                showSubscribersUC.DataContext = showSubscribersViewModel;
+                showSubscribersViewModel.InitializeProperties();
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(showSubscribersUC);
+            });
         }
     
     }

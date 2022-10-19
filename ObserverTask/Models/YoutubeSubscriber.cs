@@ -11,6 +11,11 @@ namespace ObserverTask.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public List<Post> Posts { get; set; }
+
+        public YoutubeSubscriber()
+        {
+            Posts = new List<Post>();
+        }
         public void Notify()
         {
             throw new NotImplementedException();
