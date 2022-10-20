@@ -14,9 +14,9 @@
                     <Grid Width="300" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1.5*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Height="200" Width="200" Source="{Binding ImagePath}" Stretch="Fill" ></Image>
+                        <Image Margin="10" Grid.Column="0" Height="200" Width="100" Source="{Binding ImagePath}" Stretch="Fill" ></Image>
                         <StackPanel VerticalAlignment="Center" Grid.Column="1">
                             <TextBlock Margin="5" Width="400" Text="{Binding TextInfo}" 
                                        TextWrapping="Wrap"></TextBlock>

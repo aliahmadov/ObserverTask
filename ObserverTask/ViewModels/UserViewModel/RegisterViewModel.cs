@@ -3,6 +3,7 @@ using ObserverTask.Helpers;
 using ObserverTask.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +42,12 @@ namespace ObserverTask.ViewModels
 
             RegisterCommand = new RelayCommand(c =>
             {
-                var subscribers = FileHelper.ReadSubscribers("subscribers").ToList();
+                var subscribers = new List<ISubscriber>();
                 var youtubeSubsribers = new List<YoutubeSubscriber>();
+                if (File.Exists("subscribers"))
+                {
+                    subscribers = FileHelper.ReadSubscribers("subscribers").ToList();
+                }
                 foreach (var item in subscribers)
                 {
                     if (item is YoutubeSubscriber subs)

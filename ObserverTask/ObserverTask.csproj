@@ -63,14 +63,14 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Youtuber.cs" />
     <Compile Include="Models\YoutubeSubscriber.cs" />
-    <Compile Include="ViewModels\AddPostViewModel.cs" />
+    <Compile Include="ViewModels\YoutuberViewModel\AddPostViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\ShowSubscribersViewModel.cs" />
-    <Compile Include="ViewModels\SubsciberSignInViewModel.cs" />
-    <Compile Include="ViewModels\SubscriberHomeViewModel.cs" />
-    <Compile Include="ViewModels\UserInfoViewModel.cs" />
-    <Compile Include="ViewModels\YoutuberMainViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\YoutuberViewModel\ShowSubscribersViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel\SubsciberSignInViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel\SubscriberHomeViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel\UserInfoViewModel.cs" />
+    <Compile Include="ViewModels\YoutuberViewModel\YoutuberMainViewModel.cs" />
     <Compile Include="Views\AddPostUC.xaml.cs">
       <DependentUpon>AddPostUC.xaml</DependentUpon>
     </Compile>
